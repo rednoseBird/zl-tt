@@ -4,14 +4,108 @@
         <div class="indeterminate light-blue"></div>
     </div>
 
-    <h3 class="center-align">{{info.Title}}</h3>
-    <div class="center-align">
-        <img class="responsive-video"
-             ng-src="{{info.Poster}}"/>
-    </div>
-    <div class="row"
-        ng-repeat="(key, val) in info">
-        <div class="col s2 m2 l2 light-blue-text">{{key}}</div>
-        <div class="col s10 m10 l10">{{val}}</div>
+    <div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <h4>{{info.Title}}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <img ng-src="{{info.Poster}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <div class="tag blue-grey darken-3" ng-repeat="genre in split(info.Genre);">
+                            <small>{{genre}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l7 offset-l1">
+                <div class="row">
+                    <div class="col s2 center-align">
+                        <i class="material-icons small blue-grey-text">event</i><br/>
+                        <small>{{info.Released}}</small>
+                    </div>
+                    <div class="col s2 center-align">
+                        <i class="material-icons small blue-grey-text">alarm</i><br/>
+                        <small>{{info.Runtime}}</small>
+                    </div>
+                    <div class="col s2 center-align">
+                        <i class="material-icons small blue-grey-text">star</i><br/>
+                        <small>{{info.imdbRating}}</small>
+                    </div>
+                    <div class="col s2 center-align">
+                        <i class="material-icons small blue-grey-text">thumbs_up_down</i><br/>
+                        <small>{{info.imdbVotes}}</small>
+                    </div>
+                    <div class="col s2 center-align">
+                        <i class="material-icons small blue-grey-text">theaters</i><br/>
+                        <small>{{info.Type}}</small>
+                    </div>
+                    <div class="col s2 center-align">
+                        <i class="material-icons small blue-grey-text">flag</i><br/>
+                        <small>{{info.Country}}</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 blue-grey-text">Rated:</div>
+                    <div class="col s2">{{info.Rated}}</div>
+                    <div class="col s2 offset-s4 blue-grey-text">Metascore:</div>
+                    <div class="col s2 white center-align">
+                        <span class="blue-grey-text text-darken-4">{{info.Metascore}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        {{info.Plot}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 blue-grey-text">
+                        Director:
+                    </div>
+                    <div class="col s10">
+                        {{info.Director}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 blue-grey-text">
+                        Writer(s):
+                    </div>
+                    <div class="col s10">
+                        {{info.Writer}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 blue-grey-text">
+                        Actors:
+                    </div>
+                    <div class="col s10">
+                        {{info.Actors}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 blue-grey-text">
+                        Language:
+                    </div>
+                    <div class="col s10">
+                        {{info.Language}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 blue-grey-text">
+                        Awards:
+                    </div>
+                    <div class="col s10">
+                        {{info.Awards}}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </article>

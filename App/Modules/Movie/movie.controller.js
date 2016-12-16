@@ -9,6 +9,8 @@
         $scope.info     = {};
         $scope.isLoaded = false;
 
+        $scope.split    = split;
+
         omdb
             .movie($routeParams.id)
             .then(
@@ -20,5 +22,9 @@
                     console.log(`error`);
                 }
             );
+
+        function split(data = "") {
+            return data.split(',');
+        }
     }
 })();
