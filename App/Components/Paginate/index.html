@@ -1,0 +1,6 @@
+<ul class="pagination center-align">
+    <li ng-repeat="p in getPages()"
+        ng-class="{'active blue-grey darken-3 z-depth-3': isActive(p)}">
+        <a href="#!/movies/{{p}}">{{p}}</a>
+    </li>
+</ul>

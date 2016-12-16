@@ -1,0 +1,17 @@
+<article>
+    <div class="progress blue-grey darken-3"
+         ng-hide="isLoaded">
+        <div class="indeterminate light-blue"></div>
+    </div>
+
+    <h3 class="center-align">{{info.Title}}</h3>
+    <div class="center-align">
+        <img class="responsive-video"
+             ng-src="{{info.Poster}}"/>
+    </div>
+    <div class="row"
+        ng-repeat="(key, val) in info">
+        <div class="col s2 m2 l2 light-blue-text" ng-hide="hide(key)">{{key}}</div>
+        <div class="col s10 m10 l10" ng-hide="hide(key)">{{val}}</div>
+    </div>
+</article>

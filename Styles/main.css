@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+article {
+    flex: 1 0 auto;
+}
+
+.modal {
+    position: fixed !important;
+        bottom: -50vh;
+        left:   0vw;
+    display: block !important;
+    width:  100vw !important;
+    height: 50vh !important;
+    z-index: 9999;
+
+    transition:             all 0.5s !important;
+    -webkit-transition:     all 0.5s !important;
+    -moz-transition:        all 0.5s !important;
+    -o-transition:          all 0.5s !important;
+
+    transition-duration:    0.5s;
+}
+
+.m-overlay {
+    position: fixed;
+        top:    0vh;
+        left:   0vh;
+    display:  block;
+    height:     100vh;
+    width:      100vw;
+    background: rgba(0,0,0,0.7);
+    opacity:    1;
+    z-index:    9998;
+    visibility: hidden;
+
+    transition:             all 0.3s !important;
+    -webkit-transition:     all 0.3s !important;
+    -moz-transition:        all 0.3s !important;
+    -o-transition:          all 0.3s !important;
+
+    transition-duration:    0.3s;
+}
+
+.m-overlay-show {
+    visibility: visible;
+}
+
+.modal-show {
+    bottom: 0vh !important;
+}

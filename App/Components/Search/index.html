@@ -1,0 +1,32 @@
+<div class="fixed-action-btn " style="bottom: 6vh; right:15vw;">
+    <a class="btn-floating btn-large waves-effect waves-light red" ng-click="toggleModal(!modal)">
+        <i class="material-icons">search</i>
+    </a>
+</div>
+
+<div ng-class="['m-overlay', {'m-overlay-show': modal}]" ng-click="toggleModal(!modal)"></div>
+<div ng-class="['modal', {'modal-show': modal}]">
+    <div class="modal-content">
+        <h4 class="blue-grey-text">Filters</h4>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12 blue-grey-text">
+                        <input id="find" type="text" ng-model="findMovie.Title" />
+                        <label for="find">Movie</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6 blue-grey-text">
+                        <input id="plot" type="text" ng-model="findMovie.plot" />
+                        <label for="plot">Plot</label>
+                    </div>
+                    <div class="input-field col s6 blue-grey-text">
+                        <input id="slider" type="range" min="0" max="10" step ="0.1" value ="" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <small class="blue-grey-text text-lighten-4">Click on the dark screen, to close modal</small>
+    </div>
+</div>

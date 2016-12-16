@@ -1,0 +1,53 @@
+<!doctype HTML>
+<html lang="en" ng-app="ZL-tt">
+    <head>
+        <title>ZL-tt</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+        <link rel="stylesheet" href="Styles/main.css">
+
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/materialize-css/dist/js/materialize.js"></script>
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/angular-route/angular-route.min.js"></script>
+        <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+
+        <script src="App/app.js"></script>
+        <script src="App/app.route.js"></script>
+
+        <script src="App/Services/omdb.service.js"></script>
+
+        <script src="App/Components/Paginate/paginate.controller.js"></script>
+        <script src="App/Components/Paginate/paginate.js"></script>
+
+        <script src="App/Components/Search/search.controller.js"></script>
+        <script src="App/Components/Search/search.js"></script>
+
+        <script src="App/Modules/Movies/movies.controller.js"></script>
+        <script src="App/Modules/Movie/movie.controller.js"></script>
+
+        <style>
+
+
+        </style>
+    </head>
+    <body class="blue-grey darken-4 white-text">
+        <nav class="blue-grey darken-3 white-text">
+            <div class="nav-wrapper">
+                <div class="brand-logo center">Zoral labs test task</div>
+            </div>
+        </nav>
+
+        <article class="container">
+
+            <ng-view></ng-view>
+
+        </article>
+
+        <footer class="page-footer blue-grey darken-3">
+            <div class="footer-copyright center-align">
+                Developed by Max A. for ZL
+            </div>
+        </footer>
+    </body>
+</html>

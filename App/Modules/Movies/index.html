@@ -1,0 +1,20 @@
+<article>
+    <search find-movie="findMovie"></search>
+
+    <div class="collection z-depth-5">
+        <a class="collection-item blue-grey darken-4"
+            ng-hide="isLoaded">
+            <div class="progress blue-grey darken-3">
+                <div class="indeterminate light-blue"></div>
+            </div>
+        </a>
+
+        <a class="collection-item blue-grey-text"
+           ng-href="#!/movie/{{movie.imdbID}}"
+           ng-repeat="movie in movies.Search | filter:findMovie:strict">
+                {{movie.Title}}
+        </a>
+    </div>
+
+    <paginate active-page="page" total="{{movies.totalResults}}"></paginate>
+</article>
