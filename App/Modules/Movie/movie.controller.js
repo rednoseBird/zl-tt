@@ -9,8 +9,6 @@
         $scope.info     = {};
         $scope.isLoaded = false;
 
-        $scope.hide = hide;
-
         omdb
             .movie($routeParams.id)
             .then(
@@ -22,9 +20,5 @@
                     console.log(`error`);
                 }
             );
-
-        function hide(title) {
-            return [`Title`, `Poster`, `Response`, `imdbID`].indexOf(title) !== -1;
-        }
     }
 })();
