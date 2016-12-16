@@ -25,6 +25,14 @@ article {
     transition-duration:    0.5s;
 }
 
+input[type=range] {
+    margin: 40px 0px 0px 0px !important;
+}
+
+span.thumb.active {
+    top: 0px !important;
+}
+
 .m-overlay {
     position: fixed;
         top:    0vh;
@@ -32,7 +40,7 @@ article {
     display:  block;
     height:     100vh;
     width:      100vw;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0);
     opacity:    1;
     z-index:    9998;
     visibility: hidden;
@@ -46,6 +54,7 @@ article {
 }
 
 .m-overlay-show {
+    background: rgba(0,0,0,0.7);
     visibility: visible;
 }
 

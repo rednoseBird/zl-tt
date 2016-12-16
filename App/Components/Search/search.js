@@ -8,7 +8,8 @@
                 templateUrl:    `App/Components/Search/index.html`,
                 controller:     `SearchController`,
                 scope: {
-                    findMovie:  `=`
+                    findMovie:  `=`,
+                    maxVal:     `=`
                 }
             }
         });

@@ -22,7 +22,8 @@
                         <label for="plot">Plot</label>
                     </div>
                     <div class="input-field col s6 blue-grey-text">
-                        <input id="slider" type="range" min="0" max="10" step ="0.1" value ="" />
+                        <input id="rating" type="range" min="0" max="10" step ="0.1" value ="10" ng-model="maxVal"/>
+                        <label for="rating">from 0 to {{maxVal}}</label>
                     </div>
                 </div>
             </form>

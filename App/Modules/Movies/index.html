@@ -1,5 +1,5 @@
 <article>
-    <search find-movie="findMovie"></search>
+    <search find-movie="findMovie" max-val="maxVal"></search>
 
     <div class="collection z-depth-5">
         <a class="collection-item blue-grey darken-4"
@@ -11,10 +11,16 @@
 
         <a class="collection-item blue-grey-text"
            ng-href="#!/movie/{{movie.imdbID}}"
-           ng-repeat="movie in movies.Search | filter:findMovie:strict">
+           ng-repeat="movie in movies.Search | filter:findMovie:strict | filter:byRating('rt')">
                 {{movie.Title}}
         </a>
     </div>
 
-    <paginate active-page="page" total="{{movies.totalResults}}"></paginate>
+    <!--<paginate active-page="page" total="{{movies.totalResults}}"></paginate>-->
+    <ul class="pagination center-align">
+        <li ng-repeat="p in getPages()"
+            ng-class="{'active blue-grey darken-3 z-depth-3': isActive(p)}">
+            <a href="#!/movies/{{p}}">{{p}}</a>
+        </li>
+    </ul>
 </article>
