@@ -6,10 +6,11 @@
         .controller(`MoviesController`, [`$scope`, `omdb`, `$routeParams`, MoviesController]);
 
     function MoviesController($scope, omdb, $routeParams){
-        $scope.movies       = {Search: [{Title: ``}], totalResults: 0};
-        $scope.maxVal       = 10;
-        $scope.findMovie    = {Title: ``, plot: ``, rt: ``};
-        $scope.isLoaded     = false;
+        $scope.movies           = {Search: [{Title: ``}], totalResults: 0};
+        $scope.findMovie        = {plot: ``, rt: ``};
+        $scope.movieTitle       = ``;
+        $scope.maxVal           = 10;
+        $scope.isLoaded         = false;
 
         $scope.activePage       = $routeParams.p;
         $scope.total            = 0;
@@ -20,12 +21,15 @@
 
         $scope.search           = search;
 
-        $scope.$watch(`findMovie.Title`, ()=>{search()});
+        $scope.$watch(`movieTitle`, (oTitle, nTitle)=>{
+            $scope.activePage = oTitle !== nTitle ? 1 : $scope.activePage;
+            search();
+        });
 
         function search() {
             $scope.isLoaded = false;
             omdb
-                .movies($scope.activePage, $scope.findMovie.Title)
+                .movies($scope.activePage, $scope.movieTitle)
                 .then(
                     (response)=>{
                         $scope.movies = response.data;

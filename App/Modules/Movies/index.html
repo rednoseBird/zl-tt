@@ -1,5 +1,5 @@
 <article>
-    <search find-movie="findMovie" max-val="maxVal"></search>
+    <search find-movie="findMovie" max-val="maxVal" movie-title="movieTitle"></search>
 
     <div class="collection z-depth-5">
         <a class="collection-item blue-grey darken-4"
@@ -11,7 +11,7 @@
 
         <a class="collection-item blue-grey-text"
            ng-href="#!/movie/{{movie.imdbID}}"
-           ng-repeat="movie in movies.Search | filter:findMovie:strict | filter:byRating('rt')">
+           ng-repeat="movie in movies.Search | filter:findMovie:strict | filter:byRating('rt'):strict">
                 {{movie.Title}}
         </a>
     </div>

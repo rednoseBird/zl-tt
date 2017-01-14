@@ -7,6 +7,7 @@
 
     function SearchController($scope) {
         $scope.modal        = false;
+        $scope.movieTitle   = ``;
         $scope.toggleModal  = toggleModal;
 
         function toggleModal(status) {

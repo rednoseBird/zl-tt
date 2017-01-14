@@ -9,7 +9,8 @@
                 controller:     `SearchController`,
                 scope: {
                     findMovie:  `=`,
-                    maxVal:     `=`
+                    maxVal:     `=`,
+                    movieTitle: `=`
                 }
             }
         });
