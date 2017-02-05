@@ -11,6 +11,7 @@
         $scope.movieTitle       = ``;
         $scope.maxVal           = 10;
         $scope.isLoaded         = false;
+        $scope.resourceError    = ``;
 
         $scope.activePage       = $routeParams.p;
         $scope.total            = 0;
@@ -32,16 +33,22 @@
                 .movies($scope.activePage, $scope.movieTitle)
                 .then(
                     (response)=>{
-                        $scope.movies = response.data;
+                        $scope.movies = response.data || response;
 
                         angular.forEach($scope.movies.Search, (value, key)=>{
                             getMovieInfo(key, value.imdbID);
                         });
 
                         $scope.isLoaded = true;
+
+                        if (response.data.Error) {
+                            console.log('error '+response.data.Error);
+                            $scope.resourceError = response.data.Error;
+                        }
                     },
-                    ()=>{
-                        console.log(`failed to load movies list`);
+                    (response)=>{
+                        console.log(`failed to load movies list: ${response.data}`);
+                        $scope.resourceError = response.data;
                     }
                 );
         }
@@ -56,9 +63,14 @@
                         $scope.movies.Search[key].rt     = parseFloat(response.data.imdbRating);
 
                         $scope.isLoaded = true;
+
+                        if (response.data.Error) {
+                            console.log('error '+response.data.Error);
+                            $scope.resourceError = response.data.Error;
+                        }
                     },
-                    () => {
-                        console.log(`failed to get movie info`);
+                    (response) => {
+                        $scope.resourceError = response.data;
                     }
                 );
         }
